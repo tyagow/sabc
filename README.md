@@ -3,8 +3,10 @@
 Objetivo de estudar o quanto uma atitude pode influenciar as pessoas a nossa volta.
 
 ## Como "jogar?"
+Voce pode rodar o arquivo core.py: **python core.py**
+Ou voce pode rodar o arquivo v0.2/manager.py: **python v0.2/manager.py**
 
-Basicamente clique em cima de um circulo e ele irá ativar sua influencia sobre as pessoas que ele consegue "atingir"
+Para jogar clique em cima de um circulo e ele irá ativar sua influencia sobre as pessoas que ele consegue "atingir"
 
 
 ## O que cada cor significa ?
