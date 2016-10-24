@@ -3,15 +3,14 @@ from math import sqrt
 import pygame
 from pygame.locals import *
 
-INFLUENCIA_MAXIMA = 100
 WIDTH = 800
 HEIGHT = 600
-
+MAX_PESSOAS = 150
 
 class Game(object):
     done = False
     pessoas = []
-    draw_influencia = True
+    draw_influencia = False
     clock = ""
 
     def __init__(self, width=800, height=600):
@@ -54,7 +53,7 @@ class Game(object):
 
             pygame.display.update()
 
-    def carrega_pessoas(self, total_pessoas=50):
+    def carrega_pessoas(self, total_pessoas=MAX_PESSOAS):
         for i in range(total_pessoas):
             rand_x = randint(20, WIDTH - 20)
             rand_y = randint(20, HEIGHT - 20)
@@ -65,8 +64,8 @@ class Game(object):
             pessoa = Pessoa(rand_x, rand_y, rand_sentimento, influencia, rand_peso)
 
             while pessoa.colide(self.pessoas):
-                rand_x = randint(INFLUENCIA_MAXIMA, WIDTH-10)
-                rand_y = randint(INFLUENCIA_MAXIMA, HEIGHT-10)
+                rand_x = randint(30, WIDTH-30)
+                rand_y = randint(30, HEIGHT-30)
                 pessoa.x = rand_x
                 pessoa.y = rand_y
 
@@ -106,8 +105,8 @@ class Pessoa(object):
         if draw_influencia:
             pygame.draw.circle(screen, color, (self.x, self.y), self.raio_influencia, 1)
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.peso, 0)
-        for p in self.lista_influenciados:
-            pygame.draw.line(screen, self.color, (self.x, self.y), (p.x, p.y))
+        # for p in self.lista_influenciados:
+        #     pygame.draw.line(screen, self.color, (self.x, self.y), (p.x, p.y))
             # pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), 2, 0)
 
     def update(self, difftime):
