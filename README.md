@@ -29,5 +29,8 @@ Remove visualização do circulo de influencia
 ### F2 
 Visualiza circulo de influencia de cada pessoa
 
+### F3 
+Reordena pessoas e recomeca o "Jogo"
+
 
 

@@ -7,6 +7,7 @@ WIDTH = 800
 HEIGHT = 600
 MAX_PESSOAS = 150
 
+
 class Game(object):
     done = False
     pessoas = []
@@ -34,7 +35,7 @@ class Game(object):
                     if event.key == K_ESCAPE: self.done = True
                     if event.key == K_F1: self.draw_influencia = False
                     if event.key == K_F2: self.draw_influencia = True
-
+                    if event.key == K_F3: self.restart_game()
                 elif event.type == MOUSEMOTION:
                     pass
                 elif event.type == MOUSEBUTTONDOWN and event.button == 1:
@@ -70,6 +71,11 @@ class Game(object):
                 pessoa.y = rand_y
 
             self.pessoas.append(pessoa)
+
+    def restart_game(self):
+        self.pessoas.clear()
+        self.carrega_pessoas()
+
 
 
 class Pessoa(object):
