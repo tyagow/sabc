@@ -30,7 +30,7 @@ Remove visualização do circulo de influencia
 Visualiza circulo de influencia de cada pessoa
 
 ### F3 
-Reordena pessoas e recomeca o "Jogo"
+Reordena pessoas e recomeça o "Jogo"
 
 
 

@@ -77,7 +77,6 @@ class Game(object):
         self.carrega_pessoas()
 
 
-
 class Pessoa(object):
     SENTIMENTO_RUIM_COR = (0, 0, 0)
     SENTIMENTO_NEUTRO_COR = (0, 0, 255)
