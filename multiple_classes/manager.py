@@ -32,11 +32,24 @@ class GameManager(Base_state):
         elif event.type == KEYDOWN:
             if event.key == K_ESCAPE:
                 self.done = True
+            if event.key == K_F1:
+                constantes.draw_influencia = True
+            if event.key == K_F2:
+                constantes.draw_influencia = False
+            if event.key == K_F3:
+                constantes.draw_ligacao = True
+            if event.key == K_F4:
+                constantes.draw_ligacao = False
+            if event.key == K_F5:
+                self.restart_game()
+
+
         elif event.type == MOUSEBUTTONDOWN and event.button == 1:
             for p in constantes.pessoas:
                 p.event_click(event)
 
     def carrega_pessoas(self, total_pessoas=MAX_PESSOAS):
+        constantes.pessoas.clear()
         for i in range(total_pessoas):
             rand_x = randint(20, base.WIDTH - 20)
             rand_y = randint(20, base.HEIGHT - 20)
@@ -54,6 +67,8 @@ class GameManager(Base_state):
 
             constantes.pessoas.append(pessoa)
 
+    def restart_game(self):
+        self.carrega_pessoas()
 
 if __name__ == "__main__":
     g = GameManager()

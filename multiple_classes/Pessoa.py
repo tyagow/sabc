@@ -19,7 +19,6 @@ class Pessoa(object):
     ativo = False
     peso = 10
     influenciador = False
-    lista_influenciados = []
 
     def __init__(self, x=2, y=2, sentimento=0, raio_influencia=40, peso=10):
         self.draw_influencia = False
@@ -29,18 +28,21 @@ class Pessoa(object):
         self.define_cor_pelo_sentimento()
         self.raio_influencia = raio_influencia
         self.peso = peso
+        self.lista_influenciados = []
 
     def draw(self, screen):
         color = (0, 0, 0)
         if self.ativo:
             pygame.draw.circle(screen, (255, 0, 0), (self.x, self.y), self.peso+3, 0)
             color = (255, 0, 0)
-        if self.draw_influencia:
-            pygame.draw.circle(screen, color, (self.x, self.y), self.raio_influencia, 1)
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.peso, 0)
-        # for p in self.lista_influenciados:
-        #     pygame.draw.line(screen, self.color, (self.x, self.y), (p.x, p.y))
-            # pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), 2, 0)
+
+        if constantes.draw_influencia:
+            pygame.draw.circle(screen, color, (self.x, self.y), self.raio_influencia, 1)
+        if constantes.draw_ligacao:
+            for p in self.lista_influenciados:
+                pygame.draw.line(screen, self.color, (self.x, self.y), (p.x, p.y))
+                pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), 2, 0)
 
     def update(self, difftime):
         if self.ativo:
@@ -56,7 +58,7 @@ class Pessoa(object):
                 self.define_cor_pelo_sentimento()
 
     def colide_circular(self, x1, y1, size1, x2, y2, size2):
-         return sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2) <= size1 + size2
+        return sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2) <= size1 + size2
         # return (x1 - x2)**2 + (y1-y2)**2 < size1*size2
 
     def em_cima(self, outra_pessoa):

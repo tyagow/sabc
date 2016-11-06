@@ -26,7 +26,7 @@ class Base_state(object):
                 if e.type == pygame.QUIT: self.done = True
                 elif e.type == KEYDOWN:
                     if e.key == K_ESCAPE: self.done = True
-                else: self.handle_input(e)
+                self.handle_input(e)
 
             # update
             self.clock.tick(FPS)
