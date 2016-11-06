@@ -2,11 +2,16 @@
 
 Objetivo de estudar o quanto uma atitude pode influenciar as pessoas a nossa volta.
 
+## Requisitos
+
+Instalar pygame na sua maquina.
+http://www.pygame.org/download.shtml
+[Ubuntu]:
+ http://packages.ubuntu.com/cgi-bin/search_packages.pl?keywords=pygame&searchon=names&subword=1&version=all&release=all    
+
 ## Como "jogar?"
 
-Voce pode rodar o arquivo core.py: **python core.py**
-
-Ou voce pode rodar o arquivo v0.2/manager.py: **python v0.2/manager.py**
+voce deve rodar o arquivo v0.2/manager.py: **python v0.2/manager.py**
 
 Para jogar clique em cima de um circulo e ele irá ativar sua influencia sobre as pessoas que ele consegue "atingir"
 

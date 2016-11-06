@@ -1,9 +1,7 @@
 import pygame
 from pygame.locals import *
-
+from constantes import *
 FPS = 60
-WIDTH = 800
-HEIGHT = 600
 
 class Base_state(object):
     done = False
@@ -33,7 +31,7 @@ class Base_state(object):
             self.update(self.clock)
 
             # draw
-            self.screen.fill((255,255,255))
+            self.screen.fill((255, 255, 255))
             self.draw(self.screen)
             pygame.display.update()
 

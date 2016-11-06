@@ -1,2 +1,2 @@
-pygame==1.9.2b8
+pygame==1.9.1
 

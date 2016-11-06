@@ -1,7 +1,7 @@
 import pygame
 from math import sqrt
 
-import constantes
+from constantes import *
 
 
 class Pessoa(object):
@@ -37,9 +37,9 @@ class Pessoa(object):
             color = (255, 0, 0)
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.peso, 0)
 
-        if constantes.draw_influencia:
+        if draw_influencia:
             pygame.draw.circle(screen, color, (self.x, self.y), self.raio_influencia, 1)
-        if constantes.draw_ligacao:
+        if draw_ligacao:
             for p in self.lista_influenciados:
                 pygame.draw.line(screen, self.color, (self.x, self.y), (p.x, p.y), 3)
                 pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), 2, 0)
@@ -83,7 +83,7 @@ class Pessoa(object):
             self.color = self.SENTIMENTO_BOM_COR
 
     def influencia_pessoas(self):
-        for p in constantes.pessoas:
+        for p in pessoas:
             if p != self and self.consegue_influenciar(p) and not p.influenciador:
                 self.influenciador = True
                 self.influencia(p)
