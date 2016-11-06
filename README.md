@@ -28,13 +28,18 @@ Pessoa neutra, não irá influenciar as pessoas.
 Sai da aplicação
 
 ### F1
-Remove visualização do circulo de influencia 
-
-### F2 
 Visualiza circulo de influencia de cada pessoa
 
-### F3 
-Reordena pessoas e recomeça o "Jogo"
+### F2 
+Remove visualização do circulo de influencia 
 
+### F3 
+Adiciona visualização de ligação de pessoas influenciadas 
+
+### F4
+Remove visualização de ligação de pessoas influenciadas 
+
+### F5 
+Recomeça a analise
 
 

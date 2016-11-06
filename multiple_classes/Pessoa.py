@@ -41,7 +41,7 @@ class Pessoa(object):
             pygame.draw.circle(screen, color, (self.x, self.y), self.raio_influencia, 1)
         if constantes.draw_ligacao:
             for p in self.lista_influenciados:
-                pygame.draw.line(screen, self.color, (self.x, self.y), (p.x, p.y))
+                pygame.draw.line(screen, self.color, (self.x, self.y), (p.x, p.y), 3)
                 pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), 2, 0)
 
     def update(self, difftime):
